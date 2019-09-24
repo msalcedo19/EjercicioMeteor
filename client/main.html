@@ -1,0 +1,51 @@
+<head>
+    <title>My first app in meteor</title>
+</head>
+
+<body>
+<h1>Using templates</h1>
+{{> formulario}}
+{{> events1}}
+</body>
+
+<template name="formulario">
+    <form>
+        <h4>Nombre: <input type="text" name="name"></h4>
+        <br>
+        <h4>Descripción: <input type="text" name="description"></h4>
+        <br>
+        <h4>Responsable: <input type="text" name="responsable"></h4>
+        <br>
+        <h4>Fecha de Inicio: <input type="date" name="fechaInicio" step="1" value="2019-09-23"></h4>
+        <br>
+        <h4>Fecha de Finalización: <input type="date" name="fechaFin" step="1" value="2019-09-23"></h4>
+        <br>
+        <h4>Ubicación: <input type="text" name="ubicacion"></h4>
+        <br>
+        <input type="submit">
+    </form>
+</template>
+
+<template name="events1">
+    <br><br>
+    <table class="egt">
+        <tr>
+            <th scope="row">Nombre---</th>
+            <th>Descripción---</th>
+            <th>Responsable---</th>
+            <th>Fecha Inicio---</th>
+            <th>Fecha Fin---</th>
+            <th>Ubicación---</th>
+        </tr>
+    </table>
+    {{#each eventsCollection}}
+        <tr>
+            <td>{{name}}-----</td>
+            <td>{{description}}-----</td>
+            <td>{{responsable}}-----</td>
+            <td>{{fechaInicio}}-----</td>
+            <td>{{fechaFin}}-----</td>
+            <td>{{ubicacion}}-----</td>
+        </tr>
+    {{/each}}
+</template>
